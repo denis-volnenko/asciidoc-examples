@@ -15,6 +15,7 @@
         <module>22-maven-asciidoctorj-diagram-sequence</module>
         <module>23-maven-asciidoctorj-diagram-entities</module>
         <module>24-maven-asciidoc-plantuml-manual</module>
+        <module>25-maven-asciidoc-drawio-plugin</module>
     </modules>
 
     <developers>
