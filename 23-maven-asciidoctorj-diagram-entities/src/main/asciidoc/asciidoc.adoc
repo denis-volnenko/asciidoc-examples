@@ -1,0 +1,29 @@
+= Simple Document
+:toc:
+:toc-title: Contents
+:sectnums:
+
+[plantuml, images/schema, svg]
+----
+@startuml
+
+entity Task {
+  id: bigint
+  ---
+  name: text
+  description: text
+  project_id: bigint
+}
+
+entity Project {
+  id: bigint
+  ---
+  name: text
+  description: text
+}
+
+Project |o..o{ Task
+
+@enduml
+----
+
