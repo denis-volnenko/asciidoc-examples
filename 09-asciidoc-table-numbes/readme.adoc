@@ -1,0 +1,15 @@
+= Simple Document
+
+[cols="0,20,80"]
+|===
+|№ |Key |Value
+
+|01.
+|height
+|600px
+
+|02.
+|width
+|400px
+
+|===
