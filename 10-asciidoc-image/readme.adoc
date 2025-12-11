@@ -1,0 +1,3 @@
+= Simple Document
+
+image::images/example.jpeg[]
