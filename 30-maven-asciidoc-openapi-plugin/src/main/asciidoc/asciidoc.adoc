@@ -3,3 +3,6 @@
 :toc-title: Contents
 :sectnums:
 
+== Представление данных
+
+include::openapi/openapi.adoc[]

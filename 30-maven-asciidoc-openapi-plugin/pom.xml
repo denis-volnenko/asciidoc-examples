@@ -56,6 +56,28 @@
                     <notifyWatchers>false</notifyWatchers>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>ru.volnenko.maven.plugin</groupId>
+                <artifactId>openapi-asciidoc-maven-plugin</artifactId>
+                <version>1.0.4</version>
+                <configuration>
+                    <serviceName>Task Manager</serviceName>
+                    <headerFirstEnabled>false</headerFirstEnabled>
+                    <headerSecondEnabled>false</headerSecondEnabled>
+                    <tableOfContentsEnabled>true</tableOfContentsEnabled>
+                    <outputPath>${project.basedir}/src/main/asciidoc/openapi</outputPath>
+                    <outputFile>openapi.adoc</outputFile>
+                    <outputJsonFile>openapi.json</outputJsonFile>
+                    <outputJsonFileEnabled>true</outputJsonFileEnabled>
+                    <outputYamlFile>openapi.yaml</outputYamlFile>
+                    <outputYamlFileEnabled>true</outputYamlFileEnabled>
+                    <outputJavaScriptFile>openapi.js</outputJavaScriptFile>
+                    <outputJavaScriptFileEnabled>true</outputJavaScriptFileEnabled>
+                    <paths>
+                        <path>${project.basedir}/src/main/resources/openapi</path>
+                    </paths>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
