@@ -1,4 +1,4 @@
-= Liquibase Example
+= Описание базы данных
 
 image::database/erd_physic.svg[]
 
