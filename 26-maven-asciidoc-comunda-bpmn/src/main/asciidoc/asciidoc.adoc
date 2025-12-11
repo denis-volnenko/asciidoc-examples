@@ -1,0 +1,7 @@
+= Simple Document
+:toc:
+:toc-title: Contents
+:sectnums:
+
+image::images/process.svg[]
+
