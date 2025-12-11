@@ -1,5 +1,11 @@
 = Описание базы данных
+:toc:
+:toc-title: Содержание
+
+== Физическая ERD-диаграмма
 
 image::database/erd_physic.svg[]
+
+== Описание таблиц
 
 include::database/database.adoc[]

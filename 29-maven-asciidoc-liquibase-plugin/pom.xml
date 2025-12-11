@@ -49,7 +49,7 @@
                     <skipSslVerification>false</skipSslVerification>
                     <maxRequestsPerSecond>10</maxRequestsPerSecond>
                     <spaceKey>LK</spaceKey>
-                    <ancestorId>41156616</ancestorId>
+                    <ancestorId>41156637</ancestorId>
                     <publishingStrategy>REPLACE_ANCESTOR</publishingStrategy>
                     <serverId>confluence.volnenko.ru</serverId>
                     <versionMessage>Version ${project.version}</versionMessage>
