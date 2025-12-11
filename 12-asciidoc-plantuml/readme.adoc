@@ -1,1 +1,9 @@
 = Simple Document
+
+[plantuml]
+------
+User -> (Start)
+User --> (Use the application) : Polish label-Zażółć gęślą jaźń
+
+:Main Admin: ---> (Use the application) : This is<br/>nyet another<br/>nlabel
+------
