@@ -1,1 +1,10 @@
+@startuml
 
+entity Simple {
+  id: bigint
+  ---
+  name: text
+  description: text
+}
+
+@enduml
