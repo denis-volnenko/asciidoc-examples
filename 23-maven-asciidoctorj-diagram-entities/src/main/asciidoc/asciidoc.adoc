@@ -7,7 +7,8 @@
 ----
 @startuml
 
-entity Task {
+
+entity "Task" as t {
   id: bigint
   ---
   name: text
@@ -15,14 +16,14 @@ entity Task {
   project_id: bigint
 }
 
-entity Project {
+entity "Project" as p {
   id: bigint
   ---
   name: text
   description: text
 }
 
-Project |o..o{ Task
+p |o..o{ t
 
 @enduml
 ----
