@@ -3,7 +3,8 @@
 
 [cols="20,80"]
 |===
-|Key |Value
+|Key 
+|Value
 
 |height
 |600px
