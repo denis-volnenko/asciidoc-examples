@@ -12,7 +12,7 @@
     <modules>
         <module>20-maven-asciidoc</module>
         <module>21-maven-asciidoc-plugin</module>
-        <module>22-maven-asciidoctorj-diagram</module>
+        <module>22-maven-asciidoctorj-diagram-sequence</module>
     </modules>
 
     <developers>
