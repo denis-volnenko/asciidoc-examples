@@ -1,1 +1,5 @@
 = Liquibase Example
+
+image::database/erd_physic.svg[]
+
+include::database/database.adoc[]

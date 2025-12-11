@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.volnenko.asciidoc</groupId>
-    <artifactId>example-28</artifactId>
+    <artifactId>example-29</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
@@ -54,6 +54,28 @@
                     <serverId>confluence.volnenko.ru</serverId>
                     <versionMessage>Version ${project.version}</versionMessage>
                     <notifyWatchers>false</notifyWatchers>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>ru.volnenko.maven.plugin</groupId>
+                <artifactId>liquibase-asciidoc-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <serviceName>Task Manager</serviceName>
+                    <dataBaseInfo>Postgres 15</dataBaseInfo>
+                    <headerFirstEnabled>false</headerFirstEnabled>
+                    <headerSecondEnabled>false</headerSecondEnabled>
+                    <tableOfContentsEnabled>true</tableOfContentsEnabled>
+                    <outputPath>${project.basedir}/src/main/asciidoc/database</outputPath>
+                    <outputFile>database.adoc</outputFile>
+                    <entityRelationDiagramInclude>false</entityRelationDiagramInclude>
+                    <outputYamlFile>database.yaml</outputYamlFile>
+                    <outputJsonFile>database.json</outputJsonFile>
+                    <outputJsonFileEnabled>true</outputJsonFileEnabled>
+                    <outputYamlFileEnabled>true</outputYamlFileEnabled>
+                    <paths>
+                        <path>${project.basedir}/src/main/resources/database</path>
+                    </paths>
                 </configuration>
             </plugin>
         </plugins>
