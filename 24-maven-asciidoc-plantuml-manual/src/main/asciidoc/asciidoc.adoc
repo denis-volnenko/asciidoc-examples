@@ -3,8 +3,5 @@
 :toc-title: Contents
 :sectnums:
 
-[plantuml, images/schema, svg]
-----
-
-----
+image::images/schema.svg[]
 
