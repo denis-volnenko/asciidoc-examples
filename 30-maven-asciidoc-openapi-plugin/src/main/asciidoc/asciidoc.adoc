@@ -1,7 +1,6 @@
 = Описание OpenAPI
 :toc:
 :toc-title: Contents
-:sectnums:
 
 == Представление данных
 
