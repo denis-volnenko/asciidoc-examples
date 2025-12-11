@@ -1,0 +1,17 @@
+= Simple Document
+
+[cols="20,80"]
+|===
+|Name |Hosts
+
+|test.service
+a|
+192.168.1.1
+192.168.1.2
+
+|mega.service
+a|
+192.168.2.1
+192.168.2.2
+
+|===
