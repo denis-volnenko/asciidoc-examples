@@ -1,4 +1,4 @@
-= Simple Document
+= Описание OpenAPI
 :toc:
 :toc-title: Contents
 :sectnums:
