@@ -17,6 +17,7 @@
         <module>24-maven-asciidoc-plantuml-manual</module>
         <module>25-maven-asciidoc-drawio-plugin</module>
         <module>26-maven-asciidoc-comunda-bpmn</module>
+        <module>27-maven-asciidoc-confluence-plugin</module>
     </modules>
 
     <developers>
