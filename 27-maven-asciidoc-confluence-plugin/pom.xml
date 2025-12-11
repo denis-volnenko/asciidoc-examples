@@ -38,6 +38,24 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.sahli.asciidoc.confluence.publisher</groupId>
+                <artifactId>asciidoc-confluence-publisher-maven-plugin</artifactId>
+                <version>0.28.0</version>
+                <configuration>
+                    <asciidocRootFolder>${project.basedir}/src/main/asciidoc</asciidocRootFolder>
+                    <sourceEncoding>UTF-8</sourceEncoding>
+                    <rootConfluenceUrl>https://confluence.volnenko.ru</rootConfluenceUrl>
+                    <skipSslVerification>false</skipSslVerification>
+                    <maxRequestsPerSecond>10</maxRequestsPerSecond>
+                    <spaceKey>LK</spaceKey>
+                    <ancestorId>41156616</ancestorId>
+                    <publishingStrategy>REPLACE_ANCESTOR</publishingStrategy>
+                    <serverId>confluence.volnenko.ru</serverId>
+                    <versionMessage>Version ${project.version}</versionMessage>
+                    <notifyWatchers>false</notifyWatchers>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
