@@ -1,0 +1,16 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+left to right direction
+LAYOUT_WITH_LEGEND()
+
+Person(user, "User")
+
+System_Boundary(k8s, "k8s") {
+    Container(simple_service, "simple-service", "Java, SpringBoot")
+    ContainerDb(simple_service_db, "simple-db", "Postgres 15 PRO")
+}
+
+Rel(user, simple_service, "https")
+Rel(simple_service, simple_service_db, "jdbc")
+
+@enduml
