@@ -1,0 +1,7 @@
+= Описание OpenAPI (Code First)
+:toc:
+:toc-title: Contents
+
+== Представление данных
+
+include::openapi/openapi.adoc[]

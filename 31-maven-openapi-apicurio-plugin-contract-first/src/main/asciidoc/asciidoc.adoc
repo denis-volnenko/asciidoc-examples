@@ -1,0 +1,7 @@
+= Описание OpenAPI (Contract First)
+:toc:
+:toc-title: Contents
+
+== Представление данных
+
+include::openapi/openapi.adoc[]

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ru.volnenko.asciidoc</groupId>
+    <artifactId>example-32</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <developers>
+        <developer>
+            <id>volnenko</id>
+            <name>Denis volnenko</name>
+            <email>denis@volnenko.ru</email>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>2.2.6</version>
+                <configuration>
+                    <attributes>
+                        <source-highlighter>rouge</source-highlighter>
+                    </attributes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>convert-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sahli.asciidoc.confluence.publisher</groupId>
+                <artifactId>asciidoc-confluence-publisher-maven-plugin</artifactId>
+                <version>0.28.0</version>
+                <configuration>
+                    <asciidocRootFolder>${project.basedir}/src/main/asciidoc</asciidocRootFolder>
+                    <sourceEncoding>UTF-8</sourceEncoding>
+                    <rootConfluenceUrl>https://confluence.volnenko.ru</rootConfluenceUrl>
+                    <skipSslVerification>false</skipSslVerification>
+                    <maxRequestsPerSecond>10</maxRequestsPerSecond>
+                    <spaceKey>LK</spaceKey>
+                    <ancestorId>41156655</ancestorId>
+                    <publishingStrategy>REPLACE_ANCESTOR</publishingStrategy>
+                    <serverId>confluence.volnenko.ru</serverId>
+                    <versionMessage>Version ${project.version}</versionMessage>
+                    <notifyWatchers>false</notifyWatchers>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>ru.volnenko.maven.plugin</groupId>
+                <artifactId>openapi-asciidoc-maven-plugin</artifactId>
+                <version>1.0.4</version>
+                <configuration>
+                    <serviceName>Pet Store</serviceName>
+                    <headerFirstEnabled>false</headerFirstEnabled>
+                    <headerSecondEnabled>false</headerSecondEnabled>
+                    <tableOfContentsEnabled>true</tableOfContentsEnabled>
+                    <outputPath>${project.basedir}/src/main/asciidoc/openapi</outputPath>
+                    <outputFile>openapi.adoc</outputFile>
+                    <outputJsonFile>openapi.json</outputJsonFile>
+                    <outputJsonFileEnabled>true</outputJsonFileEnabled>
+                    <outputYamlFile>openapi.yaml</outputYamlFile>
+                    <outputYamlFileEnabled>true</outputYamlFileEnabled>
+                    <outputJavaScriptFile>openapi.js</outputJavaScriptFile>
+                    <outputJavaScriptFileEnabled>true</outputJavaScriptFileEnabled>
+                    <paths>
+                        <path>${project.basedir}/src/main/resources/openapi</path>
+                    </paths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.apicurio</groupId>
+                <artifactId>apicurio-registry-maven-plugin</artifactId>
+                <version>2.6.13.Final</version>
+                <configuration>
+                    <output/>
+                    <existingReferences/>
+                    <registryUrl>https://apicurio-registry.volnenko.ru/apis/registry/v2
+                    </registryUrl>
+                    <artifacts>
+                        <artifact>
+                            <groupId>pet-store-service</groupId>
+                            <artifactId>code-first</artifactId>
+                            <ifExists>RETURN_OR_UPDATE</ifExists>
+                            <file>${project.basedir}/src/main/resources/openapi/simple.json</file>
+                        </artifact>
+                    </artifacts>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

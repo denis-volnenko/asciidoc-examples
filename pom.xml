@@ -21,6 +21,8 @@
         <module>28-maven-asciidoc-confluence-plugin</module>
         <module>29-maven-asciidoc-liquibase-plugin</module>
         <module>30-maven-asciidoc-openapi-plugin</module>
+        <module>31-maven-openapi-apicurio-plugin-contract-first</module>
+        <module>32-maven-openapi-apicurio-plugin-code-first</module>
     </modules>
 
     <developers>
