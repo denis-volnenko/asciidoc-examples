@@ -1,0 +1,12 @@
+---
+openapi: "3.0.1"
+
+info:
+  title: "task-manager-service"
+  version: "1.1.0"
+  description: Тестовый Сервис
+
+servers:
+  - url: https://esia-dev-k8s.test.gosuslugi.ru
+  - url: https://esia-uat.test.gosuslugi.ru
+  - url: https://esia.gosuslugi.ru

@@ -1,0 +1,53 @@
+paths:
+  /epgu/api/public/tm/{version}/{oid}/task/one/{id}:
+    put:
+      tags:
+        - public
+      summary: Обновление задачи.
+      description: Обновление задачи.
+      operationId: updateOneTaskPublic
+      parameters:
+        - name: version
+          in: path
+          description: Версия API
+          required: true
+          schema:
+            type: string
+            default: v1
+        - name: oid
+          in: path
+          description: ID пользователя
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: ID Задачи
+          required: true
+          schema:
+            type: string
+        - name: acc_t
+          in: cookie
+          description: Token-аутентификации
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Задача
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TaskPlainDto"
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessPlainDto"
+        '500':
+          description: Неизвестная ошибка
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorPlainDto"

@@ -1,0 +1,18 @@
+components:
+  schemas:
+    ErrorPlainDto:
+      type: object
+      description: Ошибка
+      required:
+        - success
+      properties:
+        message:
+          type: string
+          title: Сообщение об ошибке
+          description: Сообщение об ошибке
+          readOnly: true
+        code:
+          type: string
+          title: Код ошибки
+          description: Код ошибки
+          readOnly: true

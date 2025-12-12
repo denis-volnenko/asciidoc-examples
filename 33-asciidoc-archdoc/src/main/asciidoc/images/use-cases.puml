@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+
+actor "Пользователь" as user
+
+usecase "Управление программами" as uc01
+usecase "Управление проектами" as uc02
+usecase "Управление задачами" as uc03
+
+user --> uc01
+user --> uc02
+user --> uc03
+
+@enduml

@@ -23,6 +23,7 @@
         <module>30-maven-asciidoc-openapi-plugin</module>
         <module>31-maven-openapi-apicurio-plugin-contract-first</module>
         <module>32-maven-openapi-apicurio-plugin-code-first</module>
+        <module>33-asciidoc-archdoc</module>
     </modules>
 
     <developers>

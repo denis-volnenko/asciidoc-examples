@@ -1,0 +1,21 @@
+---
+databaseChangeLog:
+  - changeSet:
+      id: status
+      author: denis.volnenko
+      changes:
+        - createType:
+            schemaName: public
+            catalogName: app_status
+            typeName: Status
+            remarks: Статус
+            values:
+              - value:
+                  name: NOT_STARTED
+                  remarks: Не начато
+              - value:
+                  name: IN_PROGRESS
+                  remarks: В процессе
+              - value:
+                  name: COMPLETE
+                  remarks: Завершено

@@ -1,0 +1,14 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+left to right direction
+LAYOUT_WITH_LEGEND()
+
+Person(user, "Пользователь", "ЕПГУ")
+
+System_Boundary(k8s, "K8S") {
+        Container(task_manager_service, "Сервис управления задачами", "task-manager-service")
+}
+
+Rel(user, task_manager_service, "")
+
+@enduml

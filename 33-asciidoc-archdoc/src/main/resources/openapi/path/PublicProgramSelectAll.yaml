@@ -1,0 +1,43 @@
+paths:
+  /epgu/api/public/tm/{version}/{oid}/program/all:
+    get:
+      tags:
+        - public
+      summary: Получение всех программ.
+      description: Получение всех программ.
+      operationId: selectAllProgramPublic
+      parameters:
+        - name: version
+          in: path
+          description: Версия API
+          required: true
+          schema:
+            type: string
+            default: v1
+        - name: oid
+          in: path
+          description: ID пользователя
+          required: true
+          schema:
+            type: string
+        - name: acc_t
+          in: cookie
+          description: Token-аутентификации
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProjectPlainDto"
+        '500':
+          description: Неизвестная ошибка
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorPlainDto"

@@ -1,0 +1,49 @@
+@startuml 
+left to right direction 
+'!pragma graphviz_dot jdot 
+!pragma layout smetana 
+entity "app_program" {
+    *"id" : "uuid"
+---
+    "sysname" : "varchar(256)"
+    "name" : "varchar(2000)"
+    "description" : "varchar(4000)"
+    "status" : "text"
+    "version" : "integer"
+    "is_deleted" : "boolean"
+    "created" : "timestamptz"
+    "updated" : "timestamptz"
+}
+
+entity "app_project" {
+    *"id" : "uuid"
+---
+    "program_id" : "uuid"
+    "sysname" : "varchar(256)"
+    "name" : "varchar(2000)"
+    "description" : "varchar(4000)"
+    "status" : "text"
+    "version" : "integer"
+    "is_deleted" : "boolean"
+    "created" : "timestamptz"
+    "updated" : "timestamptz"
+}
+
+entity "app_task" {
+    *"id" : "uuid"
+---
+    "project_id" : "uuid"
+    "sysname" : "varchar(256)"
+    "name" : "varchar(2000)"
+    "description" : "varchar(4000)"
+    "status" : "text"
+    "version" : "integer"
+    "is_deleted" : "boolean"
+    "created" : "timestamptz"
+    "updated" : "timestamptz"
+}
+
+"app_project" }--|| "app_program"
+"app_task" }--|| "app_project"
+
+@enduml

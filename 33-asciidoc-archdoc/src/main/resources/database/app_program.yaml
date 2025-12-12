@@ -1,0 +1,72 @@
+---
+databaseChangeLog:
+  - changeSet:
+      id: program
+      author: denis.volnenko
+      changes:
+        - createTable:
+            schemaName: public
+            catalogName: example
+            tableName: app_program
+            remarks: Проект
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  remarks: Идентификатор
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: sysname
+                  type: varchar(256)
+                  remarks: Мнемоника действия
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(2000)
+                  remarks: Название
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(4000)
+                  remarks: Описание
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: text
+                  remarks: Статус
+                  defaultValue: "NOT_STARTED"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: version
+                  type: integer
+                  remarks: Оптимистичная блокировка
+                  defaultValue: "0"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  remarks: Флаг удаления
+                  defaultValue: "false"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamptz
+                  remarks: Дата создания
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: timestamptz
+                  remarks: Дата обновления
+                  defaultValue: "NULL"
+                  constraints:
+                    nullable: true

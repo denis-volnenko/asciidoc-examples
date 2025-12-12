@@ -1,0 +1,13 @@
+components:
+  schemas:
+    SuccessPlainDto:
+      type: object
+      description: Ошибка
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          title: Флаг выполнения операции
+          description: Флаг выполнения операции
+          readOnly: true

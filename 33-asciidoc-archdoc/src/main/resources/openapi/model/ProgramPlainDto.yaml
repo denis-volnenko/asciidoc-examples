@@ -1,0 +1,47 @@
+components:
+  schemas:
+    ProgramPlainDto:
+      type: object
+      description: Программа
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: Идентификатор
+          description: Идентификатор
+        sysname:
+          type: string
+          title: Мнемоника действия
+          description: Мнемоника действия
+        name:
+          type: string
+          title: Название
+          description: Название
+        description:
+          type: string
+          title: Описание
+          description: Описание
+        status:
+          type: string
+          title: Статус
+          description: Статус
+          enum:
+            - NOT_STARTED
+            - IN_PROGRESS
+            - COMPLETE
+        version:
+          type: number
+          title: Версия
+          description: Версия
+        created:
+          type: string
+          format: iso8601
+          readOnly: true
+          title: Дата создания
+          description: Дата создания
+        updated:
+          type: string
+          format: iso8601
+          readOnly: true
+          title: Дата обновления
+          description: Дата обновления

@@ -1,0 +1,1119 @@
+{
+  "paths" : {
+    "/epgu/api/public/tm/{version}/{oid}/project/one" : {
+      "post" : {
+        "tags" : [ "public" ],
+        "summary" : "Создание проекта.",
+        "description" : "Создание проекта.",
+        "operationId" : "createOneProjectPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Проект",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProjectPlainDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/epgu/api/public/tm/{version}/{oid}/program/one/{id}" : {
+      "delete" : {
+        "tags" : [ "public" ],
+        "summary" : "Удаление программы.",
+        "description" : "Удаление программы.",
+        "operationId" : "deleteOneProgramPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Программы",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get" : {
+        "tags" : [ "public" ],
+        "summary" : "Получение программы.",
+        "description" : "Получение программы.",
+        "operationId" : "getOneProgramPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Программы",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProgramPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "public" ],
+        "summary" : "Обновление программы.",
+        "description" : "Обновление программы.",
+        "operationId" : "updateOneProgramPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Программы",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Программа",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProgramPlainDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/epgu/api/public/tm/{version}/{oid}/task/one" : {
+      "post" : {
+        "tags" : [ "public" ],
+        "summary" : "Создание задачи.",
+        "description" : "Создание задачи.",
+        "operationId" : "createOneTaskPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Проект",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TaskPlainDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/epgu/api/public/tm/{version}/{oid}/project/all" : {
+      "get" : {
+        "tags" : [ "public" ],
+        "summary" : "Получение всех проектов.",
+        "description" : "Получение всех проектов.",
+        "operationId" : "selectAllProjectPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ProjectPlainDto"
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/epgu/api/public/tm/{version}/{oid}/task/one/{id}" : {
+      "put" : {
+        "tags" : [ "public" ],
+        "summary" : "Обновление задачи.",
+        "description" : "Обновление задачи.",
+        "operationId" : "updateOneTaskPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Задачи",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Задача",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TaskPlainDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "public" ],
+        "summary" : "Удаление задачи.",
+        "description" : "Удаление задачи.",
+        "operationId" : "deleteOneTaskPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Задачи",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get" : {
+        "tags" : [ "public" ],
+        "summary" : "Получение задачи.",
+        "description" : "Получение задачи.",
+        "operationId" : "getOneTaskPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Задачи",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TaskPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/epgu/api/public/tm/{version}/{oid}/program/all" : {
+      "get" : {
+        "tags" : [ "public" ],
+        "summary" : "Получение всех программ.",
+        "description" : "Получение всех программ.",
+        "operationId" : "selectAllProgramPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ProjectPlainDto"
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/epgu/api/public/tm/{version}/{oid}/project/one/{id}" : {
+      "put" : {
+        "tags" : [ "public" ],
+        "summary" : "Обновление проекта.",
+        "description" : "Обновление проекта.",
+        "operationId" : "updateOneProjectPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Проекта",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Проект",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProjectPlainDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "public" ],
+        "summary" : "Удаление проекта.",
+        "description" : "Удаление проекта.",
+        "operationId" : "deleteOneProjectPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Проекта",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SuccessPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get" : {
+        "tags" : [ "public" ],
+        "summary" : "Получение проекта.",
+        "description" : "Получение проекта.",
+        "operationId" : "getOneProjectPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID Проекта",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProjectPlainDto"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/epgu/api/public/tm/{version}/{oid}/task/all" : {
+      "get" : {
+        "tags" : [ "public" ],
+        "summary" : "Получение всех задач.",
+        "description" : "Получение всех задач.",
+        "operationId" : "selectAllTaskPublic",
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "path",
+          "description" : "Версия API",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "v1"
+          }
+        }, {
+          "name" : "oid",
+          "in" : "path",
+          "description" : "ID пользователя",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "acc_t",
+          "in" : "cookie",
+          "description" : "Token-аутентификации",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Успешный ответ",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/TaskPlainDto"
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Неизвестная ошибка",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorPlainDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ProjectPlainDto" : {
+        "type" : "object",
+        "description" : "Проект",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid",
+            "title" : "Идентификатор",
+            "description" : "Идентификатор"
+          },
+          "sysname" : {
+            "type" : "string",
+            "title" : "Мнемоника действия",
+            "description" : "Мнемоника действия"
+          },
+          "name" : {
+            "type" : "string",
+            "title" : "Название",
+            "description" : "Название"
+          },
+          "description" : {
+            "type" : "string",
+            "title" : "Описание",
+            "description" : "Описание"
+          },
+          "status" : {
+            "type" : "string",
+            "title" : "Статус",
+            "description" : "Статус",
+            "enum" : [ "NOT_STARTED", "IN_PROGRESS", "COMPLETE" ]
+          },
+          "version" : {
+            "type" : "number",
+            "title" : "Версия",
+            "description" : "Версия"
+          },
+          "created" : {
+            "type" : "string",
+            "format" : "iso8601",
+            "readOnly" : true,
+            "title" : "Дата создания",
+            "description" : "Дата создания"
+          },
+          "updated" : {
+            "type" : "string",
+            "format" : "iso8601",
+            "readOnly" : true,
+            "title" : "Дата обновления",
+            "description" : "Дата обновления"
+          }
+        }
+      },
+      "SuccessPlainDto" : {
+        "type" : "object",
+        "description" : "Ошибка",
+        "required" : [ "success" ],
+        "properties" : {
+          "success" : {
+            "type" : "boolean",
+            "title" : "Флаг выполнения операции",
+            "description" : "Флаг выполнения операции",
+            "readOnly" : true
+          }
+        }
+      },
+      "TaskPlainDto" : {
+        "type" : "object",
+        "description" : "Задача",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid",
+            "title" : "Идентификатор",
+            "description" : "Идентификатор"
+          },
+          "sysname" : {
+            "type" : "string",
+            "title" : "Мнемоника действия",
+            "description" : "Мнемоника действия"
+          },
+          "name" : {
+            "type" : "string",
+            "title" : "Название",
+            "description" : "Название"
+          },
+          "description" : {
+            "type" : "string",
+            "title" : "Описание",
+            "description" : "Описание"
+          },
+          "status" : {
+            "type" : "string",
+            "title" : "Статус",
+            "description" : "Статус",
+            "enum" : [ "NOT_STARTED", "IN_PROGRESS", "COMPLETE" ]
+          },
+          "version" : {
+            "type" : "number",
+            "title" : "Версия",
+            "description" : "Версия"
+          },
+          "created" : {
+            "type" : "string",
+            "format" : "iso8601",
+            "readOnly" : true,
+            "title" : "Дата создания",
+            "description" : "Дата создания"
+          },
+          "updated" : {
+            "type" : "string",
+            "format" : "iso8601",
+            "readOnly" : true,
+            "title" : "Дата обновления",
+            "description" : "Дата обновления"
+          }
+        }
+      },
+      "ProgramPlainDto" : {
+        "type" : "object",
+        "description" : "Программа",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid",
+            "title" : "Идентификатор",
+            "description" : "Идентификатор"
+          },
+          "sysname" : {
+            "type" : "string",
+            "title" : "Мнемоника действия",
+            "description" : "Мнемоника действия"
+          },
+          "name" : {
+            "type" : "string",
+            "title" : "Название",
+            "description" : "Название"
+          },
+          "description" : {
+            "type" : "string",
+            "title" : "Описание",
+            "description" : "Описание"
+          },
+          "status" : {
+            "type" : "string",
+            "title" : "Статус",
+            "description" : "Статус",
+            "enum" : [ "NOT_STARTED", "IN_PROGRESS", "COMPLETE" ]
+          },
+          "version" : {
+            "type" : "number",
+            "title" : "Версия",
+            "description" : "Версия"
+          },
+          "created" : {
+            "type" : "string",
+            "format" : "iso8601",
+            "readOnly" : true,
+            "title" : "Дата создания",
+            "description" : "Дата создания"
+          },
+          "updated" : {
+            "type" : "string",
+            "format" : "iso8601",
+            "readOnly" : true,
+            "title" : "Дата обновления",
+            "description" : "Дата обновления"
+          }
+        }
+      },
+      "ErrorPlainDto" : {
+        "type" : "object",
+        "description" : "Ошибка",
+        "required" : [ "success" ],
+        "properties" : {
+          "message" : {
+            "type" : "string",
+            "title" : "Сообщение об ошибке",
+            "description" : "Сообщение об ошибке",
+            "readOnly" : true
+          },
+          "code" : {
+            "type" : "string",
+            "title" : "Код ошибки",
+            "description" : "Код ошибки",
+            "readOnly" : true
+          }
+        }
+      }
+    }
+  },
+  "tags" : [ {
+    "name" : "public",
+    "description" : "Публичные методы"
+  }, {
+    "name" : "internal",
+    "description" : "Внутренние методы"
+  } ],
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "task-manager-service",
+    "version" : "1.1.0",
+    "description" : "Тестовый Сервис"
+  },
+  "servers" : [ {
+    "url" : "https://esia-dev-k8s.test.gosuslugi.ru"
+  }, {
+    "url" : "https://esia-uat.test.gosuslugi.ru"
+  }, {
+    "url" : "https://esia.gosuslugi.ru"
+  } ]
+}
