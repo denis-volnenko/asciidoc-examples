@@ -1,0 +1,15 @@
+= Simple Document
+
+[cols="0,20,80"]
+|===
+|№ |Key |Value
+
+|{counter:test}.
+|height
+|600px
+
+|{counter:test}.
+|width
+|400px
+
+|===
