@@ -71,7 +71,7 @@
                 <configuration>
                     <output/>
                     <existingReferences/>
-                    <registryUrl>http2://apicurio-registry.volnenko.ru/apis/registry/v2
+                    <registryUrl>https://apicurio-registry.volnenko.ru/apis/registry/v2
                     </registryUrl>
                     <artifacts>
                         <artifact>
